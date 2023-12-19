@@ -8,7 +8,9 @@
     <packaging>pom</packaging>
     <name>java-build-html</name>
     <description>java-build-html</description>
+
     <modules>
+        <module>java-build-html-domain</module>
         <module>java-build-html-common</module>
         <module>java-build-html-starter</module>
     </modules>
