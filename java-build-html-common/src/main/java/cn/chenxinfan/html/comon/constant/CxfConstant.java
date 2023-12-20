@@ -27,7 +27,5 @@ public class CxfConstant {
      */
     public static final String html_main_head = "";
 
-    public static void main(String[] args) {
-        System.out.println(point_symbol + template_file_suffix);
-    }
+    public static final String freemarker_encode = "utf-8";
 }

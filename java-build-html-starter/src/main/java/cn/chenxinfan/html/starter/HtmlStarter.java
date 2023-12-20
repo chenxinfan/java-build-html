@@ -1,5 +1,8 @@
 package cn.chenxinfan.html.starter;
 
+import cn.chenxinfan.html.comon.domain.FreemarkerModel;
+import cn.chenxinfan.html.comon.util.FreemarkerUtil;
+
 /**
  * html静态页面starter
  *
@@ -9,16 +12,18 @@ package cn.chenxinfan.html.starter;
  */
 public class HtmlStarter {
 
-    /*
-        ，
-        ，
-        ，
-        ，
-        ，
-        ，
-     */
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        long start = System.currentTimeMillis();
+
+        FreemarkerModel freemarkerModel = new FreemarkerModel();
+        freemarkerModel.setClazz(HtmlStarter.class);
+        freemarkerModel.setTemplateName("index.ftl");
+        String path = HtmlStarter.class.getClassLoader().getResource("").getPath().replaceAll("%20", " ");
+        freemarkerModel.setAbsoluteTargetFileName(path + "index.html");
+        FreemarkerUtil.createHtmlFromModel(freemarkerModel);
+
+        long end = System.currentTimeMillis();
+        System.out.println("handle complete time = " + (end - start) + "毫秒.");
     }
 
 }
